@@ -26,6 +26,33 @@ class MainActivity : AppCompatActivity() {
             "West Quad",
             LocalDateTime.of(2021, 10, 4, 11, 0, 0, 0),
             LocalDateTime.of(2021, 10, 4, 15, 0, 0, 0),
+        ),
+        FoodTruck(
+            "3",
+            "Star Ginger",
+            R.drawable.starginger,
+            3,
+            "Silo Patio",
+            LocalDateTime.of(2021, 10, 4, 13,0, 0, 0),
+            LocalDateTime.of(2021, 10, 4, 16,0, 0, 0),
+        ),
+        FoodTruck(
+            "4",
+            "Bangin Bowls",
+            R.drawable.banginbowls,
+            2,
+            "Tercero DC",
+            LocalDateTime.of(2021, 10, 4, 14,0, 0, 0),
+            LocalDateTime.of(2021, 10, 4, 18,0, 0, 0),
+        ),
+        FoodTruck(
+            "5",
+            "Authentic Street Taco",
+            R.drawable.authenticstreettacos,
+            3,
+            "Silo Patio",
+            LocalDateTime.of(2021, 10, 4, 11,0, 0, 0),
+            LocalDateTime.of(2021, 10, 4, 16,0, 0, 0),
         )
     )
 
