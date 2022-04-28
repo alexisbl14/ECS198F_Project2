@@ -5,29 +5,57 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import java.time.LocalDateTime
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [FoodTruckListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FoodTruckListFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val foodTrucks = listOf(
+        FoodTruck(
+            "1",
+            "Shah's Halal",
+            R.drawable.shah_s_halal,
+            3,
+            "Silo Patio",
+            LocalDateTime.of(2021, 10, 4, 11, 0, 0, 0),
+            LocalDateTime.of(2021, 10, 4, 16, 0, 0, 0),
+        ),
+        FoodTruck(
+            "2",
+            "Hefty Gyros",
+            R.drawable.hefty_gyros,
+            2,
+            "West Quad",
+            LocalDateTime.of(2021, 10, 4, 11, 0, 0, 0),
+            LocalDateTime.of(2021, 10, 4, 15, 0, 0, 0),
+        ),
+        FoodTruck(
+            "3",
+            "Star Ginger",
+            R.drawable.starginger,
+            3,
+            "Silo Patio",
+            LocalDateTime.of(2021, 10, 4, 13,0, 0, 0),
+            LocalDateTime.of(2021, 10, 4, 16,0, 0, 0),
+        ),
+        FoodTruck(
+            "4",
+            "Bangin Bowls",
+            R.drawable.banginbowls,
+            2,
+            "Tercero DC",
+            LocalDateTime.of(2021, 10, 4, 14,0, 0, 0),
+            LocalDateTime.of(2021, 10, 4, 18,0, 0, 0),
+        ),
+        FoodTruck(
+            "5",
+            "Authentic Street Taco",
+            R.drawable.authenticstreettacos,
+            3,
+            "Silo Patio",
+            LocalDateTime.of(2021, 10, 4, 11,0, 0, 0),
+            LocalDateTime.of(2021, 10, 4, 16,0, 0, 0),
+        )
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,23 +65,7 @@ class FoodTruckListFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_food_truck_list, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FoodTruckListFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FoodTruckListFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
+
+
 }
