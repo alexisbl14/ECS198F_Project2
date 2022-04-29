@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.ecs198f.foodtrucks.databinding.FoodTruckListItemBinding
 
 class FoodTruckListRecyclerViewAdapter(private val items: List<FoodTruck>) :
@@ -46,8 +47,13 @@ class FoodTruckListRecyclerViewAdapter(private val items: List<FoodTruck>) :
                 truckImageView.setImageResource(it.imageResId)
                 locationTextView.text = it.location
                 timeTextView.text = it.formattedTimeInterval
+                Glide.with(itemView.context)
+                    .load(it.imageResId)
+                    .into(truckImageView)
             }
+
         }
+
 
         holder.foodTruck = items[position]
         /*holder.itemView.setOnClickListener{
