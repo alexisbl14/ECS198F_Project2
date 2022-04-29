@@ -74,6 +74,12 @@ class FoodTruckListFragment : Fragment() {
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<RecyclerView>(R.id.foodTruckMenuRecyclerView)
+    }
+
 
 
 

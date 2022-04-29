@@ -5,10 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class FoodTruckDetailFragment : Fragment() {
+
+    private val args: FoodTruckDetailFragmentArgs by navArgs()
+    private lateinit var foodTruck: FoodTruck
 
     private val menuItems = listOf(
         FoodItem(
@@ -44,12 +50,28 @@ class FoodTruckDetailFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_food_truck_detail, container, false)
+        foodTruck = args.foodTruck
+
         view.findViewById<RecyclerView>(R.id.foodTruckMenuRecyclerView).apply {
             layoutManager = LinearLayoutManager(context)
             adapter = FoodTruckMenuRecyclerViewAdapter(menuItems)
         }
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val truckImageView: ImageView = view.findViewById(R.id.foodTruckListItemFragmentImage)
+        val locationTextView: TextView = view.findViewById(R.id.foodTruckListItemFragmentLocation)
+        val timeTextView: TextView = view.findViewById(R.id.foodTruckListItemFragmentTime)
+        val priceTextView: TextView = view.findViewById(R.id.foodTruckListItemFragmentPriceLevel)
+
+        truckImageView.setImageResource(foodTruck.imageResId)
+        locationTextView.text = foodTruck.location
+        timeTextView.text = foodTruck.formattedTimeInterval
+        priceTextView.text = "$".repeat(foodTruck.priceLevel)
+
     }
 
 
