@@ -67,6 +67,9 @@ class FoodTruckDetailFragment : Fragment() {
         val timeTextView: TextView = view.findViewById(R.id.foodTruckListItemFragmentTime)
         val priceTextView: TextView = view.findViewById(R.id.foodTruckListItemFragmentPriceLevel)
 
+        val activity = requireActivity() as MainActivity
+        activity.title = foodTruck.name
+
         truckImageView.setImageResource(foodTruck.imageResId)
         locationTextView.text = foodTruck.location
         timeTextView.text = foodTruck.formattedTimeInterval

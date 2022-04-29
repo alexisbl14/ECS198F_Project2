@@ -65,6 +65,9 @@ class FoodTruckListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        val activity = requireActivity() as MainActivity
+        activity.title = "Food Trucks"
+
         val view = inflater.inflate(R.layout.fragment_food_truck_list, container, false)
         view.findViewById<RecyclerView>(R.id.foodTruckListFragmentRecyclerView).apply {
             layoutManager = LinearLayoutManager(context)
