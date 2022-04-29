@@ -1,3 +1,3 @@
-# Food Truck App - Stage 2 Starter
+# Food Truck App - Stage 2
 
-This repo contains the starter code for stage 2 of Food Truck app project. 
+This repo contains stage 2 of the Food Truck app project. 
