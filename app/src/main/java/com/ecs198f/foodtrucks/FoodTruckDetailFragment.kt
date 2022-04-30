@@ -1,12 +1,12 @@
 package com.ecs198f.foodtrucks
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -70,7 +70,7 @@ class FoodTruckDetailFragment : Fragment() {
         val activity = requireActivity() as MainActivity
         activity.title = foodTruck.name
 
-        //truckImageView.setImageResource(foodTruck.imageUrl)
+        //truckImageView.setImageResource(foodTruck.imageUrl) make glide call here
         locationTextView.text = foodTruck.location
         timeTextView.text = foodTruck.formattedTimeInterval
         priceTextView.text = "$".repeat(foodTruck.priceLevel)
