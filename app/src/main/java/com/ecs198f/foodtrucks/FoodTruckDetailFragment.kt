@@ -1,6 +1,7 @@
 package com.ecs198f.foodtrucks
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,6 +54,7 @@ class FoodTruckDetailFragment : Fragment() {
                 call: Call<List<FoodItem>>,
                 response: Response<List<FoodItem>>
             ) {
+                Log.d("my MSG", response.body().toString())
                 foodTruckItemAdapter.updateFoodItems(response.body()!!)
                 locationTextView.text = foodTruck.location
                 timeTextView.text = foodTruck.formattedTimeInterval

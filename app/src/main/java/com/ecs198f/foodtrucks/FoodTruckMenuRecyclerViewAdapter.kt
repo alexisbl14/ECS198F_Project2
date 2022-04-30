@@ -33,7 +33,12 @@ class FoodTruckMenuRecyclerViewAdapter(private var menuItems: List<FoodItem>): R
         holder.apply {
             menuItemNameTextView.text = menuItem.name
             menuItemDescriptionTextView.text = menuItem.description
-            menuItemPriceTextView.text = "$${menuItem.price} (tax included)"
+            if (menuItem.taxIncluded == true)
+            {
+                menuItemPriceTextView.text = "$${menuItem.price} (tax included)"
+            }
+            else
+                menuItemPriceTextView.text = "$${menuItem.price}"
         }
     }
 
