@@ -8,6 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 
 class FoodTruckMenuRecyclerViewAdapter(private var menuItems: List<FoodItem>): RecyclerView.Adapter<FoodTruckMenuRecyclerViewAdapter.ViewHolder>() {
 
+    fun updateFoodItems(foodItem: List<FoodItem>) {
+        this.menuItems = foodItem
+        notifyDataSetChanged()
+    }
+
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val menuItemNameTextView: TextView = itemView.findViewById(R.id.menuItemNameText)
         val menuItemDescriptionTextView: TextView = itemView.findViewById(R.id.menuItemDescriptionText)
@@ -26,8 +31,8 @@ class FoodTruckMenuRecyclerViewAdapter(private var menuItems: List<FoodItem>): R
         val menuItem = menuItems[position]
 
         holder.apply {
-            menuItemNameTextView.text = menuItem.id
-            menuItemDescriptionTextView.text = menuItem.truckId
+            menuItemNameTextView.text = menuItem.name
+            menuItemDescriptionTextView.text = menuItem.description
             menuItemPriceTextView.text = "$${menuItem.price} (tax included)"
         }
     }
