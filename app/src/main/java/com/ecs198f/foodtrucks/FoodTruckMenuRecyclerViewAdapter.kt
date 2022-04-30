@@ -26,8 +26,8 @@ class FoodTruckMenuRecyclerViewAdapter(private var menuItems: List<FoodItem>): R
         val menuItem = menuItems[position]
 
         holder.apply {
-            menuItemNameTextView.text = menuItem.name
-            menuItemDescriptionTextView.text = menuItem.description
+            menuItemNameTextView.text = menuItem.id
+            menuItemDescriptionTextView.text = menuItem.truckId
             menuItemPriceTextView.text = "$${menuItem.price} (tax included)"
         }
     }

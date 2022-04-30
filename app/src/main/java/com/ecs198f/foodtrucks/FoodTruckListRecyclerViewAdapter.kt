@@ -10,9 +10,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ecs198f.foodtrucks.databinding.FoodTruckListItemBinding
 
-class FoodTruckListRecyclerViewAdapter(private val items: List<FoodTruck>) :
+class FoodTruckListRecyclerViewAdapter(private var items: List<FoodTruck>) :
     RecyclerView.Adapter<FoodTruckListRecyclerViewAdapter.ViewHolder>() {
 
+    fun updateFoodTrucks(foodTruck: List<FoodTruck>) {
+        this.items = foodTruck
+        notifyDataSetChanged()
+    }
     class ViewHolder(itemView: View, var foodTruck: FoodTruck? = null) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.foodTruckListItemTitle)
         val priceTextView: TextView = itemView.findViewById(R.id.foodTruckListItemPriceLevel)
@@ -44,11 +48,11 @@ class FoodTruckListRecyclerViewAdapter(private val items: List<FoodTruck>) :
             holder.apply {
                 nameTextView.text = it.name
                 priceTextView.text = "$".repeat(it.priceLevel)
-                truckImageView.setImageResource(it.imageResId)
+                //truckImageView.setImageResource(it.imageResId)
                 locationTextView.text = it.location
                 timeTextView.text = it.formattedTimeInterval
                 Glide.with(itemView.context)
-                    .load(it.imageResId)
+                    .load(it.imageUrl)
                     .into(truckImageView)
             }
 

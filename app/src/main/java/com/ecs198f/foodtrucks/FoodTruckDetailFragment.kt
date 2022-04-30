@@ -70,7 +70,7 @@ class FoodTruckDetailFragment : Fragment() {
         val activity = requireActivity() as MainActivity
         activity.title = foodTruck.name
 
-        truckImageView.setImageResource(foodTruck.imageResId)
+        //truckImageView.setImageResource(foodTruck.imageUrl)
         locationTextView.text = foodTruck.location
         timeTextView.text = foodTruck.formattedTimeInterval
         priceTextView.text = "$".repeat(foodTruck.priceLevel)
